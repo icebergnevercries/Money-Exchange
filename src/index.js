@@ -19,16 +19,16 @@ module.exports = function makeExchange(currency) {
             arrayCoins[namesCoin[i]] = massCurrEx[0];
             currency = massCurrEx[1];
         }                 
-    }
-
-    function currencyExchange (value, currency){
-        let count = 0;
-        while(currency / value >= 1){
-            currency -= value;
-            count++;
-        }
-        return [count, currency];
-    }
+    }   
 
     return arrayCoins;
 }
+
+let currencyExchange = (value, currency) => {
+    let count = 0;
+    while(currency / value >= 1){
+        currency -= value;
+        count++;
+    };
+    return [count, currency];
+};
